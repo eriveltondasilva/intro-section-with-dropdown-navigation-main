@@ -1,7 +1,5 @@
 @charset 'utf-8';
 
-
-
 // --------------------
 // #SETTINGS */
 // --------------------
@@ -22,8 +20,6 @@ $color-AlmostBlack: hsl(0, 0%, 8%);
 // colors
 
 // variables
-
-
 
 // --------------------
 // #TOOLS */
@@ -47,10 +43,7 @@ $color-AlmostBlack: hsl(0, 0%, 8%);
     @return mix($color, #000, $percent);
 }
 
-
 // *mixins
-
-
 
 // --------------------
 /* #BASE */
@@ -63,11 +56,17 @@ $color-AlmostBlack: hsl(0, 0%, 8%);
 }
 
 body {
-    width : 100%;
     height: 100vh;
 }
 
+a {
+    text-decoration: none;
+    color: $color-AlmostBlack;
+}
 
+img {
+    max-width: 100%;
+}
 
 // --------------------
 /* #TYPOGRAPHY */
@@ -75,35 +74,77 @@ body {
 
 html {
     font: 500 18px / 1.5 $sansserif-stack;
+    color: $color-AlmostBlack;
 }
 
-
+.card__title {
+    font-weight: 700;
+}
 
 // --------------------
 /* #LAYOUT */
 // --------------------
 
 // *grid
+body {
+    display: flex;
+    flex-direction: column;
+}
 
+#header {
+    display: flex;
+    justify-content: space-between;
+}
 
+#main {
+    display: flex;
+    flex-direction: row-reverse;
+    // grid-template: 1fr / 1fr 1fr;
+    // margin: 0 60px;
+
+    // > .card {
+    //     background-color: orange;
+    // }
+}
 
 // --------------------
 /* #COMPONENTS */
 // --------------------
 
+#header {
+    padding: 20px 50px;
+    margin-bottom: 40px;
+}
 
+.header__logo {
+    margin-right: 20px;
+}
+
+.header__nav {
+    display: flex;
+}
+
+.nav__item {
+    display: inline;
+    margin: 0 10px;
+}
+
+.button {
+    padding: 10px 20px;
+}
 
 // --------------------
 /* #THEME */
 // --------------------
 
-
+.button--white {
+    border-radius: 16px;
+    border: 2px solid #000;
+}
 
 // --------------------
 /* #UTILITIES */
 // --------------------
-
-
 
 .attribution {
     font-size: 11px;
