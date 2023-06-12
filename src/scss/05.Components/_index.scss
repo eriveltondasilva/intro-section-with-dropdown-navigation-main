@@ -1,0 +1,13 @@
+.header__nav {
+    display: flex;
+}
+
+.nav {
+    &__itens {
+        margin-left: 20px;
+    }
+    &__item {
+        display: inline;
+        padding: 10px 15px;
+    }
+}

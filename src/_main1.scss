@@ -1,0 +1,73 @@
+
+
+// --------------------
+// #LAYOUT */
+// --------------------
+
+// *grid
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+// --------------------
+// #COMPONENTS */
+// --------------------
+
+#header {
+    padding: 20px 50px;
+    margin-bottom: 40px;
+}
+
+.header__logo {
+    margin-right: 20px;
+}
+
+.header__nav {
+    display: flex;
+}
+
+.nav__item {
+    display: inline;
+    margin: 0 10px;
+}
+
+.card__title {
+    font-weight: 700;
+}
+
+.button {
+    padding: 10px 20px;
+
+    &--white {
+        border-radius: 16px;
+        border: 2px solid #000;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+// --------------------
+// #THEME */
+// --------------------
+
+// --------------------
+// #UTILITIES */
+// --------------------

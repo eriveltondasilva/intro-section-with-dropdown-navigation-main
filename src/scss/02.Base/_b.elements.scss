@@ -1,0 +1,20 @@
+body {
+    height: 100vh;
+    font: 500 18px / 1.5 $sansserif-stack;
+    color: $color-MediumGray;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+a {
+    color: $color-MediumGray;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
