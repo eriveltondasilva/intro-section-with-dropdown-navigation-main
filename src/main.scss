@@ -1,0 +1,326 @@
+@charset 'utf-8';
+
+// #01.settings
+
+// variables
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+$sansserif-stack: ('Verdana', 'Open Sans', 'Helvetica', 'Arial', sans-serif);
+$serif-stack: ('Times New Roman', 'Georgia', serif);
+$font-epilogue: ('Epilogue', $sansserif-stack);
+
+$color-AlmostWhite: hsl(0, 0%, 98%);
+$color-MediumGray: hsl(0, 0%, 41%);
+$color-AlmostBlack: hsl(0, 0%, 8%);
+
+$margin-sm: 90px;
+$margin-lg: 120px;
+
+// functions
+/// Função 'lighter()'
+/// @param {color} $color - a cor que será deixada mais clara.
+/// @param {number} $percent [80%] - a porcentagem de 100% até 0%, quanto menor mais claro.
+/// @return {color} retorna uma cor mais clara.
+@function lighter($color, $percent: 80) {
+    @return mix($color, #fff, $percent);
+}
+
+/// Função 'darker()'
+/// @param {color} $color - a cor que será deixada mais escura.
+/// @param {number} $percent [80%] - a porcentagem de 100% até 0%, quanto menor mais escuro.
+/// @return {color} retorna uma cor mais escura.
+@function darker($color, $percent: 80) {
+    @return mix($color, #000, $percent);
+}
+
+// #02.base
+
+// generics
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// elements
+body {
+    color: $color-MediumGray;
+    font: 500 18px / 1.5 $sansserif-stack;
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+a {
+    color: $color-MediumGray;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+// #03.layout
+#main {
+    display: flex;
+    flex-direction: row-reverse;
+
+    > * {
+        flex: 1;
+    }
+}
+
+// #04.objects
+
+// button
+.button {
+    padding: 8px 16px;
+    border: solid 2;
+    border-radius: 12px;
+    transition: background-color 100ms ease-in-out;
+
+    &:hover {
+        color: $color-AlmostBlack;
+    }
+
+    &-border {
+        border: solid 2px $color-MediumGray;
+
+        &:hover {
+            border-color: $color-AlmostBlack;
+        }
+    }
+
+    &-black {
+        background-color: $color-AlmostBlack;
+        color: $color-AlmostWhite;
+        font-size: 1.3rem;
+        padding: 10px 30px;
+
+        &:hover {
+            background-color: $color-AlmostWhite;
+            color: $color-AlmostBlack;
+            border: solid 2px $color-AlmostBlack;
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    &_content {
+        display: none;
+        position: absolute;
+        min-width: 250px;
+        background-color: $color-AlmostWhite;
+        z-index: 1000;
+    }
+}
+
+
+.dropdown:hover > .dropdown_content {
+    display: block;
+}
+
+
+// #05.components
+.header {
+    &_nav {
+        display: flex;
+    }
+    &_menu {
+        display: none;
+    }
+    &_label {
+        display: none;
+    }
+}
+
+.nav {
+    &_itens {
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    &_item {
+        display: inline;
+        padding: 10px 15px;
+
+        &:hover {
+            color: $color-AlmostBlack;
+        }
+    }
+}
+
+.card_body {
+    margin-left: $margin-lg;
+    margin-right: $margin-sm;
+}
+
+.card_img {
+    content: url('/dist/images/image-hero-desktop.png');
+    max-width: 400px;
+    margin-left: $margin-sm;
+    margin-right: $margin-lg;
+}
+
+.card {
+    &_title {
+        color: $color-AlmostBlack;
+        font-size: 4rem;
+        line-height: 1;
+        margin-top: 60px;
+        font-weight: 900;
+    }
+
+    &_text {
+        margin: 40px 0;
+    }
+
+    &_button {
+        margin-bottom: 120px;
+    }
+}
+
+.card_footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.attribution {
+    text-align: center;
+    margin-top: 40px;
+}
+
+// #06.themes
+
+// #07.utilities
+
+// ===========================================
+
+@media screen and (max-width: 1100px) {
+    $margin-sm: 60px;
+    $margin-lg: 90px;
+
+    :where(.header.menu:checked) .menu_wrapper {
+        display: block;
+        position: fixed;
+        background-color: $color-AlmostWhite;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 100;
+    }
+
+    .card_img {
+        margin-left: $margin-lg;
+        margin-right: $margin-sm;
+    }
+
+    .card_body {
+        margin-left: $margin-sm;
+        margin-right: $margin-lg;
+    }
+    .card_button {
+        margin-bottom: 60px;
+    }
+}
+
+// ===========================================
+
+@media screen and (max-width: 950px) {
+    #main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card_img {
+        content: url('/dist/images/image-hero-mobile.png');
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .header_wrapper,
+    .nav_itens {
+        display: none;
+    }
+
+    .header_menu {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .header_label {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        height: 20px;
+        width: 25px;
+
+        span {
+            position: relative;
+            display: block;
+            height: 4px;
+            width: 100%;
+            border-radius: 10px;
+            background-color: $color-AlmostBlack;
+            transition: 250ms ease-in-out;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+            &:nth-child(2) {
+                top: 4px;
+            }
+            &:nth-child(3) {
+                top: 8px;
+            }
+        }
+    }
+
+    .header_menu:checked {
+        + .header_label > span {
+            &:nth-child(1) {
+                transform: rotate(-45deg);
+                top: 4px;
+            }
+
+            &:nth-child(2) {
+                visibility: hidden;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(45deg);
+                top: -4px;
+            }
+        }
+    }
+
+    .card_body {
+        $margin-sm: 8px;
+        $margin-lg: 8px;
+
+        margin-left: $margin-lg;
+        margin-right: $margin-sm;
+    }
+
+    .card {
+        &_title {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        &_text {
+            text-align: center;
+        }
+
+        &_button {
+            text-align: center;
+        }
+    }
+}
