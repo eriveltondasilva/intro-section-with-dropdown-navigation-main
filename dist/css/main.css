@@ -10,6 +10,11 @@ body {
   font: 500 18px/1.5 "Verdana", "Open Sans", "Helvetica", "Arial", sans-serif;
   width: 100%;
   height: 100vh;
+  position: relative;
+}
+
+.aside {
+  display: none;
 }
 
 header {
@@ -145,10 +150,6 @@ img {
   margin-top: 40px;
 }
 
-body {
-  position: relative;
-}
-
 @media screen and (max-width: 1100px) {
   :where(.header.menu:checked) .menu_wrapper {
     display: block;
@@ -172,6 +173,28 @@ body {
   }
 }
 @media screen and (max-width: 950px) {
+  .aside.is-expanded {
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    width: 60%;
+    height: 100vh;
+    padding: 80px 40px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .aside.is-expanded li:not(.nav_item) {
+    list-style: none;
+    margin-bottom: 12px;
+  }
+  .aside.is-expanded .nav_item {
+    display: block;
+  }
+  .aside.is-expanded .aside__btn > * {
+    display: block;
+    text-align: center;
+  }
   #main {
     display: flex;
     flex-direction: column;
@@ -195,6 +218,7 @@ body {
     display: block;
     height: 20px;
     width: 25px;
+    z-index: 1000;
   }
   .header_label span {
     position: relative;
