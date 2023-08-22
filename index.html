@@ -2,43 +2,68 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Erivelton Silva">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Erivelton Silva" />
     <!-- displays site properly based on user's device -->
 
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
 
     <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
-    <link rel="stylesheet" href="./dist/css/main.min.css">
+    <link rel="stylesheet" href="./dist/css/main.min.css" />
 </head>
 
 <body>
     <header id="header">
-
         <nav class="header_nav">
-
             <div class="header_logo">
-                <img src="./dist/images/logo.svg" alt="">
+                <img src="./dist/images/logo.svg" alt="" />
             </div>
 
             <div class="menu_wrapper">
-
-
                 <ul class="nav_itens">
-                    <li class="nav_item dropdown">Features <img class="nav_icon" src="./dist/icons/icon-arrow-down.svg" alt=""></li>
-                        <ul class="dropdown_content">
-                            <li>Todo List</li>
-                            <li>Calendar</li>
-                            <li>Reminders</li>
-                            <li>Planning</li>
-                        </ul>  
-                    <li class="nav_item">Company <img class="nav_icon" src="./dist/icons/icon-arrow-down.svg" alt=""></li>
+                    <li class="nav_item dropdown">
+                        Features
+                        <img class="nav_icon" src="./dist/icons/icon-arrow-down.svg" alt="" />
+                        <div class="dropdown_content">
+                            <ul>
+                                <li>
+                                    <a href="#"><img src="./dist/icons/icon-todo.svg" /> Todo List</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="./dist/icons/icon-calendar.svg" /> Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="./dist/icons/icon-reminders.svg" /> Reminders</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="./dist/icons/icon-planning.svg" /> Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav_item dropdown">
+                        Company
+                        <img class="nav_icon" src="./dist/icons/icon-arrow-down.svg" alt="" />
+                        <div class="dropdown_content">
+                            <ul>
+                                <li>
+                                    <a href="#">History</a>
+                                </li>
+                                <li>
+                                    <a href="#">Our Team</a>
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav_item">Careers</li>
                     <li class="nav_item">About</li>
                 </ul>
-
+            </div>
         </nav>
 
         <div class="header_wrapper">
@@ -46,61 +71,57 @@
             <a class="button button-border" href="#">Register</a>
         </div>
 
-        <input type="checkbox" id="header_menu" class="header_menu">
+        <input type="checkbox" id="header_menu" class="header_menu" />
         <label class="header_label" for="header_menu">
             <span></span>
             <span></span>
             <span></span>
         </label>
-        </div>
-
     </header>
 
-
     <main id="main">
-
         <section class="card">
             <div class="card_img"></div>
         </section>
 
         <section class="card">
-
             <div class="card_body">
-
                 <h1 class="card_title">Make remote work</h1>
 
-                <p class="card_text">Get your team in sync, no matter your location. Streamline processes,
-                    create team rituals, and watch productivity soar.</p>
+                <p class="card_text">
+                    Get your team in sync, no matter your location.
+                    Streamline processes, create team rituals, and watch
+                    productivity soar.
+                </p>
 
                 <div class="card_button">
                     <a class="button button-black" href="#">Learn more</a>
                 </div>
 
-
                 <footer class="card_footer">
                     <div class="footer_img">
-                        <img src="./dist/images/client-databiz.svg" alt="">
+                        <img src="./dist/images/client-databiz.svg" alt="" />
                     </div>
                     <div class="footer_img">
-                        <img src="./dist/images/client-audiophile.svg" alt="">
+                        <img src="./dist/images/client-audiophile.svg" alt="" />
                     </div>
                     <div class="footer_img">
-                        <img src="./dist/images/client-meet.svg" alt="">
+                        <img src="./dist/images/client-meet.svg" alt="" />
                     </div>
                     <div class="footer_img">
-                        <img src="./dist/images/client-maker.svg" alt="">
+                        <img src="./dist/images/client-maker.svg" alt="" />
                     </div>
                 </footer>
-
             </div>
-
         </section>
     </main>
 
     <footer id="footer" class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+            href="#">Your Name Here</a>.
     </footer>
+
 </body>
 
 </html>
