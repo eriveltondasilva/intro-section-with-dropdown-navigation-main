@@ -68,12 +68,22 @@ img {
 .dropdown_content {
   display: none;
   position: absolute;
-  min-width: 250px;
-  background-color: hsl(0, 0%, 98%);
-  z-index: 1000;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  min-width: 180px;
+  top: 40px;
+  left: 0;
+  box-shadow: 0px 0px 4px 1px gray;
+  z-index: 1;
 }
-
-.dropdown:hover > .dropdown_content {
+.dropdown_content li {
+  list-style: none;
+}
+.dropdown_content li:not(:last-child) {
+  margin-bottom: 8px;
+}
+.dropdown:hover .dropdown_content {
   display: block;
 }
 
@@ -133,6 +143,10 @@ img {
 .attribution {
   text-align: center;
   margin-top: 40px;
+}
+
+body {
+  position: relative;
 }
 
 @media screen and (max-width: 1100px) {
